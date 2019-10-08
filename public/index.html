@@ -36,3 +36,48 @@
     -->
   </body>
 </html>
+
+<!-- 
+
+notes from sample project
+
+https://codesandbox.io/s/components-and-props-guided-project-solution-g5126
+
+index.js imports app from app folder and renders app to root element in html 
+import App from "./App";
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
+
+app.js imports color picker and counter and exports as app
+import ColorPicker from "./components/ColorComponents/ColorPicker";
+import Counter from "./components/CounterComponents/Counter";
+import "./styles.css";
+function App() {
+  return (
+    <div className="counter">
+      <ColorPicker />
+      <Counter />
+    </div>
+  );
+}
+export default App;
+
+CounterButton generates the counter button and exports the button
+const CounterButton = props => {
+  // console.log("counterbutton", props);
+
+  return (
+    <button
+      className="button"
+      // We add the onClick here. We can't add it to our component in Counter because we aren't clicking on the component. We are clicking on the stuff the component makes. In this case our button
+      onClick={() => props.number()}
+    >
+      {props.buttonValue}
+    </button>
+  );
+};
+export default CounterButton;
+
+Counter.js imports the CounterButton, houses the Counter function, and returns the buttons and the counter display that the user sees
+
+-->
